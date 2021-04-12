@@ -79,6 +79,7 @@ body {
 .categories .card p {
   font-size: 1.3em;
   text-align: center;
+  padding: 0 0.4em;
 }
 
 .categories .card:hover {
@@ -90,60 +91,19 @@ body {
     margin-left: 1em;
   }
   .categories {
-    height: calc(100vh - 84.3px);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    padding-top: 0;
+    padding: 0;
   }
   .categories .card {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    background-color: white;
     width: 200px;
     height: 300px;
-    cursor: pointer;
-    color: #c715c7;
-    border-radius: 10px;
-    text-decoration: none;
+    border-radius: 1em;
+    margin: 1.5em 1em 1em 1em;
   }
   .categories .card img {
-    width: 7em;
     height: 7em;
   }
   .categories .card p {
-    font-size: 1.3em;
     padding: 0.4em 0.3em;
-    text-align: center;
-  }
-  .categories .card:hover {
-    color: rgba(199, 21, 199, 0.4);
-  }
-}
-
-@media only screen and (max-width: 600) {
-  .categories .card {
-    width: 100px;
-    height: 200px;
   }
 }
 /*# sourceMappingURL=main.css.map */
