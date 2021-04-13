@@ -1,10 +1,11 @@
 import React from "react";
-import titleIcon from "../images/trophy.svg";
+import { Link } from "react-router-dom";
 const navbar = () => {
   return (
     <div className="navbar">
-      <p>Quiz</p>
-      <img src={titleIcon} alt="Champion" />
+      <Link to="/">
+        Qu<span>iz</span>
+      </Link>
     </div>
   );
 };

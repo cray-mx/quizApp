@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./components/home";
 import Navbar from "./components/navbar";
-import Cs from "./components/cs";
+import Question from "./components/question";
 import "./css/main.css";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
       <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/cs" component={Cs} />
+        <Route exact path="/:id" component={Question} />
       </Switch>
     </Router>
   );
