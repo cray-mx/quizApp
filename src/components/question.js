@@ -1,9 +1,11 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { decode } from "he";
 import { cards } from "./cards";
+import { PointContext } from "./context";
 
 const Question = ({ match }) => {
+  const [points, setPoints] = useContext(PointContext);
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
@@ -33,20 +35,43 @@ const Question = ({ match }) => {
     }
   }, [questions, currentPage]);
 
+  useEffect(() => {
+    localStorage.setItem("points", JSON.stringify(points));
+  }, [points]);
+
   const clickHandler = (e) => {
-    if (e.target.value === questions[currentPage - 1].correct_answer) {
+    const buttons = document.getElementsByClassName("option-btns");
+    let flag = false;
+    for (let i = 0; i < 4; i++) {
+      if (buttons[i].style.background === "green") {
+        flag = true;
+      }
+    }
+    if (
+      e.target.value === questions[currentPage - 1].correct_answer &&
+      e.target.style.background !== "green" &&
+      e.target.style.background !== "red"
+    ) {
       e.target.style.background = "green";
       e.target.style.color = "white";
-    } else {
+      setPoints((points) => points + 1);
+    } else if (
+      e.target.style.background !== "red" &&
+      e.target.style.background !== "green" &&
+      !flag
+    ) {
       e.target.style.background = "red";
       e.target.style.color = "white";
+      setPoints((points) => points - 1);
+    } else {
+      return;
     }
   };
 
   const changeStyles = () => {
     let options = document.getElementsByClassName("option-btns");
     for (let i = 0; i < 4; i++) {
-      options[i].style.backgroundColor = "white";
+      options[i].style.background = "white";
       options[i].style.color = "black";
     }
   };
