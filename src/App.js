@@ -17,7 +17,7 @@ function App() {
   return (
     <Router>
       <PointContext.Provider value={[points, setPoints]}>
-        <Navbar points={points} />
+        <Navbar points={points} setPoints={setPoints} />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/:id" component={Question} />

@@ -26,7 +26,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   background-color: aliceblue;
-  font-size: 1.8em;
+  font-size: 1.4em;
 }
 
 .navbar a {
@@ -47,6 +47,14 @@ body {
   color: #db3d57;
   font-size: 1.2em;
   margin: 0 0.2em;
+}
+
+.navbar button {
+  padding: 0.4em 0.4em;
+  border: 0px;
+  background-color: grey;
+  color: white;
+  cursor: pointer;
 }
 
 .categories {
@@ -208,6 +216,9 @@ body {
 }
 
 @media only screen and (min-width: 600px) and (max-width: 900px) {
+  .navbar {
+    font-size: 1.8em;
+  }
   .categories {
     padding: 0;
   }
@@ -317,6 +328,9 @@ body {
 }
 
 @media only screen and (min-width: 900px) {
+  .navbar {
+    font-size: 1.8em;
+  }
   .categories {
     padding: 0;
   }
